@@ -1,0 +1,14 @@
+What is Typescript?
+
+Typescript is a superset of JS that allows us to add static typing, allowing us to catch errors sooner in the 
+development process.
+
+What is React?
+
+React is a JS library created by Meta in 2011. It is used for building dynamic & interactive user interfaces. 
+It does this by utilizing components, which allow us to simplify the process of building webpages by making the
+process more modular, reusable, and organized. 
+
+React components have the file extension of .tsx, as opposed to the standard .ts for vanilla TypeScript.
+
+Industry standard for React Components is PascalCase. 
