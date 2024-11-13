@@ -12,3 +12,27 @@ process more modular, reusable, and organized.
 React components have the file extension of .tsx, as opposed to the standard .ts for vanilla TypeScript.
 
 Industry standard for React Components is PascalCase. 
+
+
+
+STEPS FOR MAKING GITHUB LIVE PAGE W/ VITE REACT
+
+1. Add gh-pages package:
+	npm install gh-pages --save-dev
+
+2. Add to package.json:
+	"predeploy": "npm run build",
+  	"deploy": "gh-pages -d dist"
+
+3. Add to vite.config.ts:
+	 base: '/First-React-App/', // Use the correct repository name here
+
+4. Build and Deploy the app:
+	npm run build	//This will launch the local vite server at the same time. You can exit out of this live server with CTRL + C
+	npm run deploy	//This publishes the react app to the live page on github.
+
+5. Select the source for pages in your github repo to gh-pages branch (this branch is initialized when you downlaod the gh-pages package locally and push the app via "npm run deploy".)
+
+6. Navigate to your live page at https://<your-username>.github.io/<your-branch-name>/
+
+
