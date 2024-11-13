@@ -36,3 +36,62 @@ STEPS FOR MAKING GITHUB LIVE PAGE W/ VITE REACT
 6. Navigate to your live page at https://<your-username>.github.io/<your-branch-name>/
 
 
+Passing in values to a React component inbetween the open and closing html tags requires the property "children". More importantly, the children property needs to be defined as a ReactNode so that it can take html content such as <span></span>. Here is an example: 
+-------------------------------------------------------------------
+import { ReactNode } from "react";
+
+interface Props {
+    children: ReactNode;
+}
+
+
+const Alert = ({children}: Props) => {
+  return (
+    <div className="alert alert-primary">{children}</div>
+  )
+}
+
+export default Alert
+-------------------------------------------------------------------
+import Alert from "./components/Alert";
+
+function App() {
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  
+  return (
+    <div>
+      <Alert>
+        Hello World
+      </Alert>
+    </div>
+  );
+}
+
+export default App;
+-------------------------------------------------------------------
+
+Shortcut for making function boilerplate (with ES7+ extension)
+
+rafce
+
+
+Previous version of my app.tsx prior to building the alert and button components. 
+-------------------------------------------------------------------
+import ListGroup from "./components/ListGroup";
+
+function App() {
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  }
+
+  return (
+    <div>
+      <ListGroup items={items} heading={"Cities"} onSelectItem={handleSelectItem}></ListGroup>
+    </div>
+  );
+}
+
+export default App;
+-------------------------------------------------------------------
